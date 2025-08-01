@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Tumor Detection App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+  <script src="app.js" defer></script>
+  <script src="portal.js" defer></script>
+  <script src="forms.js" defer></script>
+  <script src="analytics.js" defer></script>
+  <script src="animations.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">BrainScan</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" data-page="home">Home</a></li>
+        <li><a href="#" data-page="services">Services</a></li>
+        <li><a href="#" data-page="about">About</a></li>
+        <li><a href="#" data-page="contact">Contact</a></li>
+        <li><a href="#" data-page="developer">Developer</a></li>
+      </ul>
+    </nav>
+    <div class="user-icon" id="userIcon">👤</div>
+  </header>
+
+  <main id="mainContent">
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>Advanced Brain Tumor Detection</h1>
+        <p>Accurate, fast, and reliable detection powered by Quantum Machine Learning</p>
+        <a href="#" class="cta" data-page="detection-method-selection">Start Detection</a>
+      </div>
+      <div class="testimonials">
+        <h2>Best Suggetion is From our side</h2>
+        <div class="testimonial">
+          <p>“BrainScan's accuracy is truly life-changing. Highly recommended!”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="page">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service">
+          <h3>MRI Analysis</h3>
+          <p>Upload MRI scans and get instant, detailed tumor detection results.</p>
+        </div>
+        <div class="service">
+          <h3>Report Generation</h3>
+          <p>Download comprehensive reports for each scan, complete with analysis.</p>
+        </div>
+        <div class="service">
+          <h3>24/7 Support</h3>
+          <p>Our expert team is available around the clock to assist you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <h2>About Us</h2>
+      <p>We are a passionate team of Machine Learning researchers and engineers dedicated to revolutionizing brain tumor diagnosis through new cutting-edge technology. Our mission is to provide accurate, fast, and accessible detection to improve patient outcomes worldwide.</p>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section id="auth-choice" class="page">
+        <h2>Welcome!</h2>
+        <div class="auth-choice-grid">
+            <div class="auth-card" data-auth-type="login">
+                <h3>Log In</h3>
+                <p>Already have an account? Log in to access your dashboard and past reports.</p>
+                <button class="btn" data-page="login">Log In Now</button>
+            </div>
+            <div class="auth-card" data-auth-type="create-account">
+                <h3>Create Account</h3>
+                <p>New to BrainScan? Register for free and start your detection journey.</p>
+                <button class="btn" data-page="create-account">Create Account</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="page">
+      <h2>Log In to Your Account</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsernameEmail" placeholder="Username or Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Log In</button>
+        <p class="form-footer">Don't have an account? <a href="#" data-page="create-account">Create New Account</a></p>
+      </form>
+    </section>
+
+    <section id="create-account" class="page">
+      <h2>Create Your BrainScan Account</h2>
+      <form id="createAccountForm">
+        <input type="email" id="createEmail" placeholder="Email" required>
+        <input type="tel" id="createPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" title="Phone number must be 10 digits" required>
+        <input type="text" id="createUsername" placeholder="Username" required>
+        <input type="text" id="createName" placeholder="Full Name" required>
+        <input type="password" id="createPassword" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <div class="captcha-container">
+            <span id="captchaText"></span>
+            <input type="text" id="captchaInput" placeholder="Enter Captcha" required>
+            <button type="button" id="refreshCaptcha">⟳</button>
+        </div>
+        <button type="submit">Create Account</button>
+      </form>
+    </section>
+
+    <section id="detection-method-selection" class="page">
+      <h2>Select Detection Method</h2>
+      <div class="method-selection-grid">
+        <div class="method-card" data-page="ml-detection">
+          <img src="https://img.icons8.com/ios-filled/100/4f46e5/artificial-intelligence.png" alt="Machine Learning">
+          <h3>Machine Learning Detection</h3>
+          <p>Leverage state-of-the-art deep learning for accurate tumor identification.</p>
+        </div>
+        <div class="method-card" data-page="quantum-ml-detection">
+          <img src="https://img.icons8.com/ios-filled/100/4f46e5/quantum-computing.png" alt="Quantum Machine Learning">
+          <h3>Quantum ML Detection</h3>
+          <p>Utilize next-generation quantum algorithms for enhanced and advanced analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ml-detection" class="page">
+      <h2>Machine Learning Detection</h2>
+      <div class="upload-area" id="mlUploadArea">
+        <input type="file" id="mlImageInput" accept="image/*" style="display: none;">
+        <label for="mlImageInput" class="upload-box">
+          <span>Upload MRI Image for ML Detection</span>
+        </label>
+      </div>
+      <div class="btn-group">
+        <button class="btn start-btn" id="mlStartBtn" type="button">Start ML Detection</button>
+        <button class="btn terminate-btn" id="mlTerminateBtn" style="display: none;">Terminate</button>
+      </div>
+      <div class="timer" id="mlTimer"></div>
+      <div class="result" id="mlResult" style="display: none;">
+        <h3>ML Detection Result</h3>
+        <p>Accuracy: <span id="mlAccuracy">0%</span></p>
+        <p>Timing: <span id="mlTiming">0s</span></p>
+        <p>Tumor Type: <span id="mlTumorType">None</span></p>
+        <button class="btn report-btn" id="mlReportBtn">Generate ML Report</button>
+      </div>
+    </section>
+
+    <section id="quantum-ml-detection" class="page">
+      <h2>Quantum ML Detection</h2>
+      <div class="upload-area" id="qmlUploadArea">
+        <input type="file" id="qmlImageInput" accept="image/*" style="display: none;">
+        <label for="qmlImageInput" class="upload-box">
+          <span>Upload MRI Image for Quantum ML Detection</span>
+        </label>
+      </div>
+      <div class="btn-group">
+        <button class="btn start-btn" id="qmlStartBtn" type="button">Start Quantum ML Detection</button>
+        <button class="btn terminate-btn" id="qmlTerminateBtn" style="display: none;">Terminate</button>
+      </div>
+      <div class="timer" id="qmlTimer"></div>
+      <div class="result" id="qmlResult" style="display: none;">
+        <h3>Quantum ML Detection Result</h3>
+        <p>Accuracy: <span id="qmlAccuracy">0%</span></p>
+        <p>Timing: <span id="qmlTiming">0s</span></p>
+        <p>Tumor Type: <span id="qmlTumorType">None</span></p>
+        <button class="btn report-btn" id="qmlReportBtn">Generate Quantum ML Report</button>
+      </div>
+    </section>
+
+    <section id="report" class="page">
+      <h2>Detection Report</h2>
+      <div class="report-content">
+        <h3>User Information</h3>
+        <p>Name: <span id="reportUserName">N/A</span></p>
+        <p>Email: <span id="reportUserEmail">N/A</span></p>
+        <p>Username: <span id="reportUserUsername">N/A</span></p>
+        <h3>Detection Results</h3>
+        <p>Tumor Type: <span id="reportTumorType">None</span></p>
+        <p>Accuracy: <span id="reportAccuracy">0%</span></p>
+        <button class="btn print-btn" id="printBtn">Print Report</button>
+      </div>
+    </section>
+
+    <section id="developer" class="page">
+      <h2>Developer Information</h2>
+      <div class="developer-content">
+        <h3>Details</h3>
+        <p><strong>Team Name:</strong> Kings of ISE</p>
+        <p><strong>Leader:</strong> Krishna Shalawadi</p>
+        <h3>Social Contact</h3>
+        <p>Connect with us on: <a href="#" target="_blank">Twitter</a>, <a href="#" target="_blank">LinkedIn</a>, <a href="#" target="_blank">GitHub</a></p>
+        <h3>Motivation</h3>
+        <p>Our motivation stems from our friend Chetan, who inspired us to build this platform to aid in brain tumor diagnosis.</p>
+        <p>We built this platform to leverage the power of AI and Quantum ML to provide accurate, timely, and accessible tools for early brain tumor detection, ultimately aiming to save lives and improve patient outcomes.</p>
+        <h3>Feedback</h3>
+        <textarea id="feedbackText" placeholder="Share your valuable feedback here..."></textarea>
+        <button class="btn feedback-btn" id="feedbackBtn">Submit Feedback</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BrainScan. Al. hhl rights reserved.</p>
+  </footer>
+</body>
+</html>
